@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record model="ir.actions.act_window" id="estudiante_list_action">
+            <field name="name">estudiante</field>
+            <field name="res_model">estudiante</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record model="ir.actions.act_window" id="ram_list_action">
+            <field name="name">ram</field>
+            <field name="res_model">ram</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+          <record model="ir.actions.act_window" id="discoduro_list_action">
+            <field name="name">disco duro</field>
+            <field name="res_model">disco duro</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+           <record model="ir.actions.act_window" id="comprador_list_action">
+            <field name="name">disco duro</field>
+            <field name="res_model">comprador</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+           <record model="ir.actions.act_window" id="oferta_list_action">
+            <field name="name">oferta</field>
+            <field name="res_model">oferta</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+    <menuitem name="Wallapop" id="wallapop_menu_root"/>
+    
+    <menuitem name="Persona" id="wallapop_menu_persona" parent="wallapop_menu_root"/>
+    <menuitem name="Portatil" id="escuela_menu_portatil" parent="escuela_menu_root"/>
+
+    
+    <menuitem name="listado de profesores" id="escuela_list_profesor" parent="escuela_menu_profesor"
+              action="profesor_list_action"/>
+    <menuitem name="listado de asignatura" id="escuela_list_asignatura" parent="escuela_menu_asignatura"
+              action="asignatura_list_action"/>
+
+
+        <record id="view_estudiante_tree" model="ir.ui.view">
+            <field name="name">estudiante.tree</field>
+            <field name="model">estudiante</field>
+            <field name="arch" type="xml">
+                <tree string="Estudiante">
+                    <field name="portatil" />
+                    <field name="dni" />
+                    <field name="nombre" />
+                    <field name="apellidos" />
+                    <field name="direccion" />
+                    <field name="telefono" />
+                </tree>
+            </field>
+        </record>
+
+             <record id="view_discoduro_tree" model="ir.ui.view">
+            <field name="name">discoduro.tree</field>
+            <field name="model">disco duro</field>
+            <field name="arch" type="xml">
+                <tree string="Disco duro ">
+                    <field name="tamaño" />
+                    <field name="valores" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_ram_tree" model="ir.ui.view">
+            <field name="name">ram.tree</field>
+            <field name="model">ram</field>
+            <field name="arch" type="xml">
+                <tree string="Ram">
+                    <field name="frecuencia" />
+                    <field name="latencia" />
+                    <field name="cantidad" />
+                    <field name="tipo" />
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="estudiante_form_view">
+            <field name="name">estudiante.form</field>
+            <field name="model">estudiante</field>
+            <field name="arch" type="xml">
+                <form string="Formulario de estudiantes">
+                    <sheet>
+                        <group>
+                    <field name="portatil" />
+                    <field name="dni" />
+                    <field name="nombre" />
+                    <field name="apellidos" />
+                    <field name="direccion" />
+                    <field name="telefono" />
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="ram_form_view">
+            <field name="name">ram.form</field>
+            <field name="model">ram</field>
+            <field name="arch" type="xml">
+                <form string="Modulos de ram">
+                    <sheet>
+                        <group>
+                    <field name="frecuencia" />
+                    <field name="latencia" />
+                    <field name="cantidad" />
+                    <field name="tipo" />
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+<record model="ir.ui.view" id="ram_form_view">
+            <field name="name">discoduro.form</field>
+            <field name="model">disco duro</field>
+            <field name="arch" type="xml">
+                <form string="Modulos de ram">
+                    <sheet>
+                        <group>
+                   <field name="tamaño" />
+                    <field name="valores" />
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+    </data>
+</odoo>
